@@ -7,6 +7,60 @@
     <link rel="stylesheet" href="login.component.css">
 </head>
 <body>
+
+<div class="container-fluid d-flex justify-content-center align-items-center vh-100">
+  <div class="card p-4 shadow-lg custom-card">
+    <div class="text-center mb-4">
+      <h1 class="title">Sistema de Gestion de un CafeBar</h1>
+      <p class="subtitle">Inicia sesión o regístrate para acceder</p>
+    </div>
+
+    <!-- Botones de cambio de vista -->
+    <div class="text-center mb-3">
+      <button class="btn btn-primary btn-lg me-2" *ngIf="mostrarFormulario === 'registro'" (click)="mostrarLogin()">Login</button>
+      <button class="btn btn-secondary btn-lg" *ngIf="mostrarFormulario === 'login'" (click)="mostrarRegistro()">Register</button>
+    </div>
+
+    <!-- Formulario de Login -->
+    <div *ngIf="mostrarFormulario === 'login'">
+      <h2 class="text-center mb-3">Iniciar Sesión</h2>
+      <form>
+        <div class="mb-3">
+          <input type="email" class="form-control input-field" placeholder="Correo Electrónico" required>
+        </div>
+        <div class="mb-3">
+          <input type="password" class="form-control input-field" placeholder="Contraseña" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Ingresar</button>
+        <a href="#" class="d-block text-center mt-2 text-muted">¿Olvidaste tu contraseña?</a>
+      </form>
+    </div>
+
+    <!-- Formulario de Registro -->
+    <div *ngIf="mostrarFormulario === 'registro'">
+      <h2 class="text-center mb-3">Registro</h2>
+      <form>
+        <div class="mb-3">
+          <input type="text" class="form-control input-field" placeholder="Nombre Completo" required>
+        </div>
+        <div class="mb-3">
+          <input type="email" class="form-control input-field" placeholder="Correo Electrónico" required>
+        </div>
+        <div class="mb-3">
+          <input type="password" class="form-control input-field" placeholder="Contraseña" required>
+        </div>
+        <div class="mb-3">
+          <input type="password" class="form-control input-field" placeholder="Confirmar Contraseña" required>
+        </div>
+        <button type="submit" class="btn btn-success w-100">Registrarse</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
     <div class="container-fluid d-flex justify-content-center align-items-center vh-100">
         <div class="card p-4 shadow-lg custom-card">
             <div class="text-center mb-4">
@@ -62,3 +116,4 @@
     
 </body>
 </html>
+

@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  mostrarFormulario: string = 'login';
+  mostrarFormulario: 'login' | 'registro' = 'login'; // Estado inicial en 'login'
 
   mostrarLogin() {
     this.mostrarFormulario = 'login';

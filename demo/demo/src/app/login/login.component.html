@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,16 +10,16 @@
     <div class="container-fluid d-flex justify-content-center align-items-center vh-100">
         <div class="card p-4 shadow-lg custom-card">
             <div class="text-center mb-4">
-                <h1 class="title">Sistema de Parqueadero</h1>
+                <h1 class="title">Sistema de gestión de Cafe Bar</h1>
                 <p class="subtitle">Inicia sesión o regístrate para acceder</p>
             </div>
-    
-            <!-- Botones para cambiar entre Login y Registro -->
+
+            <!-- Botones de cambio de vista -->
             <div class="text-center mb-3">
-                <button class="btn btn-primary btn-lg me-2" (click)="mostrarLogin()">Login</button>
-                <button class="btn btn-secondary btn-lg" (click)="mostrarRegistro()">Sign In</button>
+                <button class="btn btn-primary btn-lg me-2" *ngIf="mostrarFormulario === 'registro'" (click)="mostrarLogin()">Login</button>
+                <button class="btn btn-secondary btn-lg" *ngIf="mostrarFormulario === 'login'" (click)="mostrarRegistro()">Register</button>
             </div>
-    
+
             <!-- Formulario de Login -->
             <div *ngIf="mostrarFormulario === 'login'">
                 <h2 class="text-center mb-3">Iniciar Sesión</h2>
@@ -34,7 +34,7 @@
                     <a href="#" class="d-block text-center mt-2 text-muted">¿Olvidaste tu contraseña?</a>
                 </form>
             </div>
-    
+
             <!-- Formulario de Registro -->
             <div *ngIf="mostrarFormulario === 'registro'">
                 <h2 class="text-center mb-3">Registro</h2>
@@ -52,13 +52,9 @@
                         <input type="password" class="form-control input-field" placeholder="Confirmar Contraseña" required>
                     </div>
                     <button type="submit" class="btn btn-success w-100">Registrarse</button>
-                    <p class="text-center mt-3 text-muted">
-                        ¿Ya tienes una cuenta? <a href="#" (click)="mostrarLogin()">Inicia sesión</a>
-                    </p>
                 </form>
             </div>
         </div>
     </div>
-    
 </body>
 </html>

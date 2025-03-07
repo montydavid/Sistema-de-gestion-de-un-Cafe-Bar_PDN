@@ -19,6 +19,8 @@ target/
 *.iml
 *.ipr
 
+node_modules/
+.angular/
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
@@ -31,9 +33,3 @@ build/
 
 ### VS Code ###
 .vscode/
-# Angular cache
-.angular/
-
-# Node.js dependencies
-node_modules/
-
